@@ -1,0 +1,7 @@
+format: jb-book
+root: intro
+
+chapters:
+  - file: parte1_intro_python/1_1_intro_python
+  - file: parte1_intro_python/1_2_strings_listas_diccionarios
+  - file: parte1_intro_python/1_3_funciones_control
