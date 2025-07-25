@@ -7,4 +7,4 @@ html:
   baseurl: https://pythoncienciadatossantoto.github.io/PROGRAMACION-PARA-CIENCIA-DE-DATOS/
 sphinx:
   config:
-    html_extra_path: ["extras"]
+    html_static_path: ["extras"]
