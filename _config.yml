@@ -3,3 +3,5 @@ author: Wilmer Pineda
 logo: images/logo_usta.jpg
 execute:
   execute_notebooks: auto
+html:
+  baseurl: https://pythoncienciadatossantoto.github.io/PROGRAMACION-PARA-CIENCIA-DE-DATOS/
