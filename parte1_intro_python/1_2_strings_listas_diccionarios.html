@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -182,8 +182,12 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introducción a Python</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../history_python.html">🐍 Introducción a Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamentos de Programación en Python</span></p>
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="1_1_intro_python.html">Fundamentos de Python</a></li>
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Manejo de Estructuras de Datos</a></li>
@@ -193,6 +197,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../quiz_conocimientos_2.html">🧪 Evaluación de Práctica de Fundamentos de Python</a></li>
 </ul>
 </details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Herramientas Básicas de Python para Ciencia de Datos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../parte2_pandas/intro_pandas.html"><strong>🐼 Introducción a Pandas y Series</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parte2_pandas/dataframes_pandas.html"><strong>📊 DataFrames y Exploración de Datos</strong></a></li>
 </ul>
 
     </div>
@@ -596,10 +605,20 @@ Ultimo caracter:  u
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;Joan&#39;s height o&quot;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cadena</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;Juan&#39;s height u&quot;
 </pre></div>
 </div>
 </div>
@@ -611,6 +630,11 @@ Ultimo caracter:  u
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Joan&#39;s height o
+</pre></div>
+</div>
+</div>
 </div>
 <p>Si se desea conocer el tamaño de la cadena de caracteres se usa el metodo <code class="docutils literal notranslate"><span class="pre">len(cadena)</span></code>.</p>
 <div class="cell docutils container">
@@ -619,11 +643,21 @@ Ultimo caracter:  u
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15
+</pre></div>
+</div>
+</div>
 </div>
 <p>Si se desea conocer si un caracter esta en una cadena de caracteres se usa el operador <code class="docutils literal notranslate"><span class="pre">in</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;on&#39;</span> <span class="ow">in</span> <span class="n">cadena</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
 </pre></div>
 </div>
 </div>
@@ -680,11 +714,21 @@ Ultimo caracter:  u
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gr
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sub-cadena desde la posicion inicial, 4 caracteres.</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">cadena</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Grup
 </pre></div>
 </div>
 </div>
@@ -696,11 +740,21 @@ Ultimo caracter:  u
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Grup
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sub-cadena desde el cuarto caracter hasta el final</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">cadena</span><span class="p">[</span><span class="mi">4</span><span class="p">:])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>o
 </pre></div>
 </div>
 </div>
@@ -712,6 +766,11 @@ Ultimo caracter:  u
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>rup
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -720,11 +779,21 @@ Ultimo caracter:  u
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>upo
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sub-cadena con indices negativos</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">cadena</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>rup
 </pre></div>
 </div>
 </div>
@@ -748,11 +817,22 @@ Ultimo caracter:  u
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Primer elemento de la lista:  1
+Ultimo elemento de la lista:  Grupo
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Obtener el elemento de la posicion 3</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">lista</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2]
 </pre></div>
 </div>
 </div>
@@ -765,11 +845,21 @@ Ultimo caracter:  u
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Obtener los elementos de la posicion 1 hasta la 3</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">lista</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2.5, &#39;Grupo&#39;]
 </pre></div>
 </div>
 </div>
@@ -782,12 +872,22 @@ Ultimo caracter:  u
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2.5, &#39;Grupo&#39;, [1, 2], 10, &#39;Grupo&#39;, &#39;Nuevo&#39;]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extend permite agregar elementos pero al agregar una lista cada elemento de esta se agrega como un elemento mas dentro de la otra lista</span>
 <span class="n">lista</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s1">&#39;Elemento&#39;</span><span class="p">,</span><span class="mi">45</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2.5, &#39;Grupo&#39;, [1, 2], 10, &#39;Grupo&#39;, &#39;Nuevo&#39;, &#39;Elemento&#39;, 45]
 </pre></div>
 </div>
 </div>
@@ -800,6 +900,11 @@ Ultimo caracter:  u
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2.5, &#39;Grupo&#39;, 1, [1, 2], 10, &#39;Grupo&#39;, &#39;Nuevo&#39;, &#39;Elemento&#39;, 45]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -809,11 +914,21 @@ Ultimo caracter:  u
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2.5, &#39;Grupo&#39;, 1, [1, 2], &#39;Grupo&#39;, &#39;Nuevo&#39;, &#39;Elemento&#39;, 45]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Devuelve el número de indice del elemento que le pasamor por parámetro</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">lista</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;Grupo&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
 </pre></div>
 </div>
 </div>
@@ -826,11 +941,22 @@ Ultimo caracter:  u
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Grupo
+[1, 2.5, 1, [1, 2], &#39;Grupo&#39;, &#39;Nuevo&#39;, &#39;Elemento&#39;, 45]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Devuelve cuantas veces un elemento de una lista se repite</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">lista</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;Grupo&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
 </pre></div>
 </div>
 </div>
@@ -843,10 +969,35 @@ Ultimo caracter:  u
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[45, &#39;Elemento&#39;, &#39;Nuevo&#39;, &#39;Grupo&#39;, [1, 2], 1, 2.5, 1]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">lista</span><span class="o">.</span><span class="n">reverse</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on NoneType object:
+
+class NoneType(object)
+ |  Methods defined here:
+ |  
+ |  __bool__(self, /)
+ |      True if self else False
+ |  
+ |  __repr__(self, /)
+ |      Return repr(self).
+ |  
+ |  ----------------------------------------------------------------------
+ |  Static methods defined here:
+ |  
+ |  __new__(*args, **kwargs)
+ |      Create and return a new object.  See help(type) for accurate signature.
 </pre></div>
 </div>
 </div>
@@ -859,10 +1010,20 @@ Ultimo caracter:  u
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3, 2.5, 1, [1, 2], &#39;Grupo&#39;, &#39;Nuevo&#39;, &#39;Elemento&#39;, 45]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="ow">in</span> <span class="n">lista</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -879,6 +1040,11 @@ Ultimo caracter:  u
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Piloto 1&#39;: &#39;Fernando Alonso&#39;, &#39;Piloto 2&#39;: &#39;Kimi Raikkonen&#39;, &#39;Piloto 3&#39;: &#39;Felipe Massa&#39;}
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -888,12 +1054,24 @@ Ultimo caracter:  u
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fernando Alonso
+Fernando Alonso
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Devuelve el valor que corresponde con la key introducida, y luego borra la key y el valor.</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">diccionario</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;Piloto 1&#39;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">diccionario</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fernando Alonso
+{&#39;Piloto 2&#39;: &#39;Kimi Raikkonen&#39;, &#39;Piloto 3&#39;: &#39;Felipe Massa&#39;}
 </pre></div>
 </div>
 </div>
@@ -907,11 +1085,21 @@ Ultimo caracter:  u
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Piloto 2&#39;: &#39;Sebastian Vettel&#39;, &#39;Piloto 3&#39;: &#39;Felipe Massa&#39;, &#39;Piloto 4&#39;: &#39;Lewis Hamilton&#39;}
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diccionario</span><span class="p">[</span><span class="s1">&#39;Piloto 5&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Juan Perez&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">diccionario</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Piloto 2&#39;: &#39;Sebastian Vettel&#39;, &#39;Piloto 3&#39;: &#39;Felipe Massa&#39;, &#39;Piloto 4&#39;: &#39;Lewis Hamilton&#39;, &#39;Piloto 5&#39;: &#39;Juan Perez&#39;}
 </pre></div>
 </div>
 </div>
@@ -925,11 +1113,23 @@ Ultimo caracter:  u
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+False
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># &quot;definición&quot; in diccionario.values(): devuelve verdadero (True) o falso (False) si la definición existe en el diccionario.</span>
 <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Sebastian Vettel&quot;</span> <span class="ow">in</span> <span class="n">diccionario</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -939,6 +1139,11 @@ Ultimo caracter:  u
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># del diccionario[&#39;key&#39;]: Elimina el valor (y el key) asociado a la key indicada.</span>
 <span class="k">del</span> <span class="n">diccionario</span><span class="p">[</span><span class="s1">&#39;Piloto 2&#39;</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">diccionario</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Piloto 3&#39;: &#39;Felipe Massa&#39;, &#39;Piloto 4&#39;: &#39;Lewis Hamilton&#39;, &#39;Piloto 5&#39;: &#39;Juan Perez&#39;}
 </pre></div>
 </div>
 </div>
@@ -963,11 +1168,21 @@ Ultimo caracter:  u
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Repetir tuplas</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">tuple1</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5)
 </pre></div>
 </div>
 </div>
@@ -980,11 +1195,22 @@ Ultimo caracter:  u
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+True
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Devuelve el indice del elemento</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">tuple1</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
@@ -994,6 +1220,11 @@ Ultimo caracter:  u
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Devuelve cuantas veces esta un elemento repetido</span>
 <span class="n">tuple4</span> <span class="o">=</span> <span class="p">(</span><span class="mi">65</span><span class="p">,</span><span class="mi">67</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">67</span><span class="p">,</span><span class="mi">34</span><span class="p">,</span><span class="mi">76</span><span class="p">,</span><span class="mi">67</span><span class="p">,</span><span class="mi">231</span><span class="p">,</span><span class="mi">98</span><span class="p">,</span><span class="mi">67</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">tuple4</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">67</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
@@ -1007,6 +1238,16 @@ Ultimo caracter:  u
 <span class="nb">print</span><span class="p">(</span><span class="n">tuple4</span><span class="p">[</span><span class="mi">5</span><span class="p">:])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">tuple4</span><span class="p">[</span><span class="o">-</span><span class="mi">6</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">tuple4</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">6</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>34
+67
+(65, 67, 5, 67)
+(76, 67, 231, 98, 67)
+(34, 76, 67, 231)
+(67, 34, 76)
 </pre></div>
 </div>
 </div>

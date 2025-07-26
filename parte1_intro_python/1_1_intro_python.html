@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -182,8 +182,12 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introducción a Python</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../history_python.html">🐍 Introducción a Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamentos de Programación en Python</span></p>
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Fundamentos de Python</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="1_2_strings_listas_diccionarios.html">Manejo de Estructuras de Datos</a></li>
@@ -193,6 +197,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../quiz_conocimientos_2.html">🧪 Evaluación de Práctica de Fundamentos de Python</a></li>
 </ul>
 </details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Herramientas Básicas de Python para Ciencia de Datos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../parte2_pandas/intro_pandas.html"><strong>🐼 Introducción a Pandas y Series</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parte2_pandas/dataframes_pandas.html"><strong>📊 DataFrames y Exploración de Datos</strong></a></li>
 </ul>
 
     </div>
@@ -1310,6 +1319,11 @@ var2 = 9
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>45.12
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="funciones-integradas-built-in-functions">
@@ -1325,6 +1339,11 @@ var2 = 9
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3 elevado al cuadrado es: 9
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1334,11 +1353,21 @@ var2 = 9
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>44
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="c1"># Valor absoluto de un numero</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
 </pre></div>
 </div>
 </div>
@@ -1352,6 +1381,11 @@ var2 = 9
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-5
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1359,10 +1393,20 @@ var2 = 9
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-3.1415
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span> <span class="o">-</span><span class="mf">3.141516297</span><span class="p">,</span> <span class="mi">5</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-3.14152
 </pre></div>
 </div>
 </div>
@@ -1391,6 +1435,11 @@ var2 = 9
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1398,10 +1447,20 @@ var2 = 9
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>68
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>127
 </pre></div>
 </div>
 </div>
@@ -1421,6 +1480,22 @@ var2 = 9
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Red">Init signature:</span> range<span class=" -Color -Color-Bold -Color-Bold-Yellow">(</span>self<span class=" -Color -Color-Bold -Color-Bold-Yellow">,</span> <span class=" -Color -Color-Bold -Color-Bold-Yellow">/,</span> <span class=" -Color -Color-Bold -Color-Bold-Yellow">*</span>args<span class=" -Color -Color-Bold -Color-Bold-Yellow">,</span> <span class=" -Color -Color-Bold -Color-Bold-Yellow">**</span>kwargs<span class=" -Color -Color-Bold -Color-Bold-Yellow">)</span>
+<span class=" -Color -Color-Bold -Color-Bold-Red">Docstring:</span>     
+range(stop) -&gt; range object
+range(start, stop[, step]) -&gt; range object
+
+Return an object that produces a sequence of integers from start (inclusive)
+to stop (exclusive) by step.  range(i, j) produces i, i+1, i+2, ..., j-1.
+start defaults to 0, and stop is omitted!  range(4) produces 0, 1, 2, 3.
+These are exactly the valid indices for a list of 4 elements.
+When step is given, it specifies the increment (or decrement).
+<span class=" -Color -Color-Bold -Color-Bold-Red">Type:</span>           type
+<span class=" -Color -Color-Bold -Color-Bold-Red">Subclasses:</span>     
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="ejercicio-3">
@@ -1436,6 +1511,11 @@ var2 = 9
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 6, 11, 16, 21, 26, 31, 36, 41, 46, 51, 56, 61, 66, 71, 76, 81, 86, 91, 96]
 </pre></div>
 </div>
 </div>
