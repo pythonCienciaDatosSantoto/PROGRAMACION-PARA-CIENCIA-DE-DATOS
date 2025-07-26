@@ -3,12 +3,22 @@
 format: jb-book
 root: intro
 
-chapters:
-  - file: history_python
-  - file: parte1_intro_python/1_1_intro_python
-  - file: parte1_intro_python/1_2_strings_listas_diccionarios
-  - file: parte1_intro_python/1_3_funciones_control
-  - file: intro_quices_1
-    sections:
-      - file: quiz_conocimientos_1
-      - file: quiz_conocimientos_2
+parts:
+  - caption: Introducción a Python
+    chapters:
+      - file: history_python
+
+  - caption: Fundamentos de Programación en Python
+    chapters:
+      - file: parte1_intro_python/1_1_intro_python
+      - file: parte1_intro_python/1_2_strings_listas_diccionarios
+      - file: parte1_intro_python/1_3_funciones_control
+      - file: intro_quices_1
+        sections:
+          - file: quiz_conocimientos_1
+          - file: quiz_conocimientos_2
+
+  - caption: Herramientas Básicas de Python para Ciencia de Datos
+    chapters:
+      - file: parte2_pandas/intro_pandas
+      - file: parte2_pandas/dataframes_pandas
