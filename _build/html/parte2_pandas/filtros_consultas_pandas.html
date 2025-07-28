@@ -1,0 +1,1366 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>🔎 Filtros y Consultas Avanzadas &#8212; Programación para Ciencia de Datos</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'parte2_pandas/filtros_consultas_pandas';</script>
+    <link rel="canonical" href="https://pythoncienciadatossantoto.github.io/PROGRAMACION-PARA-CIENCIA-DE-DATOS/parte2_pandas/filtros_consultas_pandas.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="🧮 Agrupamientos y Agregaciones" href="agrupaciones_pandas.html" />
+    <link rel="prev" title="📊 DataFrames y Exploración de Datos" href="dataframes_pandas.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo_usta.jpg" class="logo__image only-light" alt="Programación para Ciencia de Datos - Home"/>
+    <script>document.write(`<img src="../_static/logo_usta.jpg" class="logo__image only-dark" alt="Programación para Ciencia de Datos - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Programación para Ciencia de Datos
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introducción a Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../history_python.html">🐍 Introducción a Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamentos de Programación en Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../parte1_intro_python/1_1_intro_python.html">Fundamentos de Python</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../parte1_intro_python/1_2_strings_listas_diccionarios.html">Manejo de Estructuras de Datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parte1_intro_python/1_3_funciones_control.html">Funciones y Control de Flujo</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../intro_quices_1.html">🧠 Introducción a los Quices de Evaluación</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../quiz_conocimientos_1.html">🧠 Quiz Interactivo: Fundamentos de Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quiz_conocimientos_2.html">🧪 Evaluación de Práctica de Fundamentos de Python</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Herramientas Básicas de Python para Ciencia de Datos (Pandas)</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro_pandas.html">🐼 Introducción a Pandas y Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataframes_pandas.html">📊 DataFrames y Exploración de Datos</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">🔎 Filtros y Consultas Avanzadas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agrupaciones_pandas.html">🧮 Agrupamientos y Agregaciones</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/parte2_pandas/filtros_consultas_pandas.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>🔎 Filtros y Consultas Avanzadas</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="filtros-y-consultas-avanzadas">
+<h1>🔎 Filtros y Consultas Avanzadas<a class="headerlink" href="#filtros-y-consultas-avanzadas" title="Link to this heading">#</a></h1>
+<p>Ya sabes cómo explorar un <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> y seleccionar subconjuntos por su posición o etiqueta. Ahora, daremos un paso más allá para aprender a hacer una de las tareas más comunes y poderosas en el análisis de datos: <strong>filtrar filas basadas en condiciones lógicas</strong>.</p>
+<p>Aquí es donde dejas de solo <em>ver</em> los datos y empiezas a <em>interrogarlos</em>.</p>
+<ul class="simple">
+<li><p><strong>3.1. Máscaras Booleanas: El Corazón del Filtrado</strong></p></li>
+</ul>
+<p>El concepto fundamental detrás del filtrado en Pandas es la <strong>máscara booleana</strong>. Es más simple de lo que suena: es una Serie de Pandas que contiene únicamente valores <code class="docutils literal notranslate"><span class="pre">True</span></code> o <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>Cuando aplicas una condición a una Serie (por ejemplo, <code class="docutils literal notranslate"><span class="pre">df['columna']</span> <span class="pre">&gt;</span> <span class="pre">10</span></code>), Pandas te devuelve una de estas máscaras.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Volvemos a cargar nuestro dataset de pingüinos</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/allisonhorst/palmerpenguins/main/inst/extdata/penguins.csv&#39;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="c1"># Creemos nuestra primera máscara booleana</span>
+<span class="c1"># Condición: ¿Qué pingüinos son de la especie &quot;Adelie&quot;?</span>
+<span class="n">mascara_adelie</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Adelie&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Esto es una máscara booleana (una Serie de True/False):&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">mascara_adelie</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">La máscara tiene </span><span class="si">{</span><span class="n">mascara_adelie</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2"> valores &#39;True&#39;.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Esto es una máscara booleana (una Serie de True/False):
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    True
+1    True
+2    True
+3    True
+4    True
+Name: species, dtype: bool
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La máscara tiene 152 valores &#39;True&#39;.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para aplicar el filtro, simplemente pasas esta máscara dentro de los corchetes <code class="docutils literal notranslate"><span class="pre">[]</span></code> de tu DataFrame. Pandas te devolverá solo las filas donde la máscara tenga el valor <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Aplicando la máscara al DataFrame</span>
+<span class="n">df_adelie</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">mascara_adelie</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DataFrame filtrado solo con pingüinos &#39;Adelie&#39;:&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_adelie</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dimensiones del DataFrame original: </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dimensiones del DataFrame filtrado: </span><span class="si">{</span><span class="n">df_adelie</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DataFrame filtrado solo con pingüinos &#39;Adelie&#39;:
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>species</th>
+      <th>island</th>
+      <th>bill_length_mm</th>
+      <th>bill_depth_mm</th>
+      <th>flipper_length_mm</th>
+      <th>body_mass_g</th>
+      <th>sex</th>
+      <th>year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>39.1</td>
+      <td>18.7</td>
+      <td>181.0</td>
+      <td>3750.0</td>
+      <td>male</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>39.5</td>
+      <td>17.4</td>
+      <td>186.0</td>
+      <td>3800.0</td>
+      <td>female</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>40.3</td>
+      <td>18.0</td>
+      <td>195.0</td>
+      <td>3250.0</td>
+      <td>female</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>36.7</td>
+      <td>19.3</td>
+      <td>193.0</td>
+      <td>3450.0</td>
+      <td>female</td>
+      <td>2007</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dimensiones del DataFrame original: (344, 8)
+Dimensiones del DataFrame filtrado: (152, 8)
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><strong>3.2. Componiendo Filtros: <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> (y), <code class="docutils literal notranslate"><span class="pre">|</span></code> (o), <code class="docutils literal notranslate"><span class="pre">~</span></code> (no)</strong></p></li>
+</ul>
+<p>Rara vez querrás filtrar por una sola condición. Para combinar múltiples condiciones, usamos los siguientes operadores:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&amp;</span></code> para <strong>Y</strong> (ambas condiciones deben ser verdaderas).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">|</span></code> para <strong>O</strong> (al menos una de las condiciones debe ser verdadera).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">~</span></code> para <strong>NO</strong> (niega una condición).</p></li>
+</ul>
+<p><strong>¡REGLA DE ORO!</strong> Cada condición individual <strong>DEBE</strong> estar envuelta en paréntesis <code class="docutils literal notranslate"><span class="pre">()</span></code> debido a las reglas de precedencia de operadores en Python.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Condición 1: Pingüinos de la especie &#39;Gentoo&#39;</span>
+<span class="c1"># Condición 2: Cuya masa corporal sea superior a 5000g</span>
+
+<span class="c1"># Usando el operador &amp; (Y)</span>
+<span class="n">df_gentoo_grandes</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Gentoo&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;body_mass_g&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">5000</span><span class="p">)]</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_gentoo_grandes</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>species</th>
+      <th>island</th>
+      <th>bill_length_mm</th>
+      <th>bill_depth_mm</th>
+      <th>flipper_length_mm</th>
+      <th>body_mass_g</th>
+      <th>sex</th>
+      <th>year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>153</th>
+      <td>Gentoo</td>
+      <td>Biscoe</td>
+      <td>50.0</td>
+      <td>16.3</td>
+      <td>230.0</td>
+      <td>5700.0</td>
+      <td>male</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>155</th>
+      <td>Gentoo</td>
+      <td>Biscoe</td>
+      <td>50.0</td>
+      <td>15.2</td>
+      <td>218.0</td>
+      <td>5700.0</td>
+      <td>male</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>156</th>
+      <td>Gentoo</td>
+      <td>Biscoe</td>
+      <td>47.6</td>
+      <td>14.5</td>
+      <td>215.0</td>
+      <td>5400.0</td>
+      <td>male</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>159</th>
+      <td>Gentoo</td>
+      <td>Biscoe</td>
+      <td>46.7</td>
+      <td>15.3</td>
+      <td>219.0</td>
+      <td>5200.0</td>
+      <td>male</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>161</th>
+      <td>Gentoo</td>
+      <td>Biscoe</td>
+      <td>46.8</td>
+      <td>15.4</td>
+      <td>215.0</td>
+      <td>5150.0</td>
+      <td>male</td>
+      <td>2007</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Condición 1: Pingüinos de la isla &#39;Dream&#39;</span>
+<span class="c1"># Condición 2: O pingüinos de la isla &#39;Biscoe&#39;</span>
+<span class="c1"># Esto se puede hacer más fácil con .isin(), ¡que veremos luego!</span>
+<span class="n">df_dream_o_biscoe</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;island&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Dream&#39;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;island&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Biscoe&#39;</span><span class="p">)]</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_dream_o_biscoe</span><span class="o">.</span><span class="n">tail</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>species</th>
+      <th>island</th>
+      <th>bill_length_mm</th>
+      <th>bill_depth_mm</th>
+      <th>flipper_length_mm</th>
+      <th>body_mass_g</th>
+      <th>sex</th>
+      <th>year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>339</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>55.8</td>
+      <td>19.8</td>
+      <td>207.0</td>
+      <td>4000.0</td>
+      <td>male</td>
+      <td>2009</td>
+    </tr>
+    <tr>
+      <th>340</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>43.5</td>
+      <td>18.1</td>
+      <td>202.0</td>
+      <td>3400.0</td>
+      <td>female</td>
+      <td>2009</td>
+    </tr>
+    <tr>
+      <th>341</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>49.6</td>
+      <td>18.2</td>
+      <td>193.0</td>
+      <td>3775.0</td>
+      <td>male</td>
+      <td>2009</td>
+    </tr>
+    <tr>
+      <th>342</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>50.8</td>
+      <td>19.0</td>
+      <td>210.0</td>
+      <td>4100.0</td>
+      <td>male</td>
+      <td>2009</td>
+    </tr>
+    <tr>
+      <th>343</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>50.2</td>
+      <td>18.7</td>
+      <td>198.0</td>
+      <td>3775.0</td>
+      <td>female</td>
+      <td>2009</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usando el operador ~ (NO)</span>
+<span class="c1"># Todos los pingüinos que NO son machos</span>
+<span class="n">df_no_machos</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="o">~</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;sex&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;male&#39;</span><span class="p">)]</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_no_machos</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>species</th>
+      <th>island</th>
+      <th>bill_length_mm</th>
+      <th>bill_depth_mm</th>
+      <th>flipper_length_mm</th>
+      <th>body_mass_g</th>
+      <th>sex</th>
+      <th>year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>39.5</td>
+      <td>17.4</td>
+      <td>186.0</td>
+      <td>3800.0</td>
+      <td>female</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>40.3</td>
+      <td>18.0</td>
+      <td>195.0</td>
+      <td>3250.0</td>
+      <td>female</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>36.7</td>
+      <td>19.3</td>
+      <td>193.0</td>
+      <td>3450.0</td>
+      <td>female</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>38.9</td>
+      <td>17.8</td>
+      <td>181.0</td>
+      <td>3625.0</td>
+      <td>female</td>
+      <td>2007</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p><strong>3.3. Consultas Más Legibles con <code class="docutils literal notranslate"><span class="pre">.query()</span></code></strong></p></li>
+</ul>
+<p>Escribir muchas condiciones con <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> y <code class="docutils literal notranslate"><span class="pre">|</span></code> puede volverse difícil de leer. El método <code class="docutils literal notranslate"><span class="pre">.query()</span></code> es una alternativa elegante que te permite escribir tus filtros en un formato de texto (string), que a menudo es más intuitivo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># La misma consulta de los &#39;Gentoo&#39; grandes, pero con .query()</span>
+<span class="n">df_gentoo_grandes_query</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;species == &#39;Gentoo&#39; and body_mass_g &gt; 5000&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_gentoo_grandes_query</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>species</th>
+      <th>island</th>
+      <th>bill_length_mm</th>
+      <th>bill_depth_mm</th>
+      <th>flipper_length_mm</th>
+      <th>body_mass_g</th>
+      <th>sex</th>
+      <th>year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>153</th>
+      <td>Gentoo</td>
+      <td>Biscoe</td>
+      <td>50.0</td>
+      <td>16.3</td>
+      <td>230.0</td>
+      <td>5700.0</td>
+      <td>male</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>155</th>
+      <td>Gentoo</td>
+      <td>Biscoe</td>
+      <td>50.0</td>
+      <td>15.2</td>
+      <td>218.0</td>
+      <td>5700.0</td>
+      <td>male</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>156</th>
+      <td>Gentoo</td>
+      <td>Biscoe</td>
+      <td>47.6</td>
+      <td>14.5</td>
+      <td>215.0</td>
+      <td>5400.0</td>
+      <td>male</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>159</th>
+      <td>Gentoo</td>
+      <td>Biscoe</td>
+      <td>46.7</td>
+      <td>15.3</td>
+      <td>219.0</td>
+      <td>5200.0</td>
+      <td>male</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>161</th>
+      <td>Gentoo</td>
+      <td>Biscoe</td>
+      <td>46.8</td>
+      <td>15.4</td>
+      <td>215.0</td>
+      <td>5150.0</td>
+      <td>male</td>
+      <td>2007</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># La consulta de las islas con &#39;or&#39;</span>
+<span class="n">df_dream_o_biscoe_query</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;island == &#39;Dream&#39; or island == &#39;Biscoe&#39;&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_dream_o_biscoe_query</span><span class="o">.</span><span class="n">tail</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>species</th>
+      <th>island</th>
+      <th>bill_length_mm</th>
+      <th>bill_depth_mm</th>
+      <th>flipper_length_mm</th>
+      <th>body_mass_g</th>
+      <th>sex</th>
+      <th>year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>339</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>55.8</td>
+      <td>19.8</td>
+      <td>207.0</td>
+      <td>4000.0</td>
+      <td>male</td>
+      <td>2009</td>
+    </tr>
+    <tr>
+      <th>340</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>43.5</td>
+      <td>18.1</td>
+      <td>202.0</td>
+      <td>3400.0</td>
+      <td>female</td>
+      <td>2009</td>
+    </tr>
+    <tr>
+      <th>341</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>49.6</td>
+      <td>18.2</td>
+      <td>193.0</td>
+      <td>3775.0</td>
+      <td>male</td>
+      <td>2009</td>
+    </tr>
+    <tr>
+      <th>342</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>50.8</td>
+      <td>19.0</td>
+      <td>210.0</td>
+      <td>4100.0</td>
+      <td>male</td>
+      <td>2009</td>
+    </tr>
+    <tr>
+      <th>343</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>50.2</td>
+      <td>18.7</td>
+      <td>198.0</td>
+      <td>3775.0</td>
+      <td>female</td>
+      <td>2009</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><strong>Ventaja de <code class="docutils literal notranslate"><span class="pre">.query()</span></code>:</strong> Puedes hacer referencia a variables externas usando el símbolo <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">masa_limite</span> <span class="o">=</span> <span class="mi">3500</span>
+<span class="n">especie_objetivo</span> <span class="o">=</span> <span class="s1">&#39;Chinstrap&#39;</span>
+
+<span class="c1"># Filtramos usando variables externas</span>
+<span class="n">df_filtrado_variables</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;body_mass_g &lt; @masa_limite and species == @especie_objetivo&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_filtrado_variables</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>species</th>
+      <th>island</th>
+      <th>bill_length_mm</th>
+      <th>bill_depth_mm</th>
+      <th>flipper_length_mm</th>
+      <th>body_mass_g</th>
+      <th>sex</th>
+      <th>year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>282</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>46.1</td>
+      <td>18.2</td>
+      <td>178.0</td>
+      <td>3250.0</td>
+      <td>female</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>292</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>50.3</td>
+      <td>20.0</td>
+      <td>197.0</td>
+      <td>3300.0</td>
+      <td>male</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>294</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>46.4</td>
+      <td>18.6</td>
+      <td>190.0</td>
+      <td>3450.0</td>
+      <td>female</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>297</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>48.5</td>
+      <td>17.5</td>
+      <td>191.0</td>
+      <td>3400.0</td>
+      <td>male</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>298</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>43.2</td>
+      <td>16.6</td>
+      <td>187.0</td>
+      <td>2900.0</td>
+      <td>female</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>300</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>46.7</td>
+      <td>17.9</td>
+      <td>195.0</td>
+      <td>3300.0</td>
+      <td>female</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>302</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>50.5</td>
+      <td>18.4</td>
+      <td>200.0</td>
+      <td>3400.0</td>
+      <td>female</td>
+      <td>2008</td>
+    </tr>
+    <tr>
+      <th>306</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>40.9</td>
+      <td>16.6</td>
+      <td>187.0</td>
+      <td>3200.0</td>
+      <td>female</td>
+      <td>2008</td>
+    </tr>
+    <tr>
+      <th>308</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>42.5</td>
+      <td>16.7</td>
+      <td>187.0</td>
+      <td>3350.0</td>
+      <td>female</td>
+      <td>2008</td>
+    </tr>
+    <tr>
+      <th>314</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>46.9</td>
+      <td>16.6</td>
+      <td>192.0</td>
+      <td>2700.0</td>
+      <td>female</td>
+      <td>2008</td>
+    </tr>
+    <tr>
+      <th>322</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>50.1</td>
+      <td>17.9</td>
+      <td>190.0</td>
+      <td>3400.0</td>
+      <td>female</td>
+      <td>2009</td>
+    </tr>
+    <tr>
+      <th>324</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>51.5</td>
+      <td>18.7</td>
+      <td>187.0</td>
+      <td>3250.0</td>
+      <td>male</td>
+      <td>2009</td>
+    </tr>
+    <tr>
+      <th>326</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>48.1</td>
+      <td>16.4</td>
+      <td>199.0</td>
+      <td>3325.0</td>
+      <td>female</td>
+      <td>2009</td>
+    </tr>
+    <tr>
+      <th>330</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>42.5</td>
+      <td>17.3</td>
+      <td>187.0</td>
+      <td>3350.0</td>
+      <td>female</td>
+      <td>2009</td>
+    </tr>
+    <tr>
+      <th>331</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>52.2</td>
+      <td>18.8</td>
+      <td>197.0</td>
+      <td>3450.0</td>
+      <td>male</td>
+      <td>2009</td>
+    </tr>
+    <tr>
+      <th>332</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>45.2</td>
+      <td>16.6</td>
+      <td>191.0</td>
+      <td>3250.0</td>
+      <td>female</td>
+      <td>2009</td>
+    </tr>
+    <tr>
+      <th>340</th>
+      <td>Chinstrap</td>
+      <td>Dream</td>
+      <td>43.5</td>
+      <td>18.1</td>
+      <td>202.0</td>
+      <td>3400.0</td>
+      <td>female</td>
+      <td>2009</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p><strong>🧠 Ejercicios Propuestos</strong></p></li>
+</ul>
+<p>De nuevo con el dataset del Titanic. ¡A interrogar los datos!
+<code class="docutils literal notranslate"><span class="pre">url_titanic</span> <span class="pre">=</span> <span class="pre">'https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv'</span></code></p>
+<ol class="arabic simple">
+<li><p><strong>Carga los datos del Titanic.</strong></p></li>
+<li><p><strong>Filtro Simple:</strong> Crea un DataFrame que contenga únicamente a los pasajeros que <strong>sobrevivieron</strong> (<code class="docutils literal notranslate"><span class="pre">Survived</span> <span class="pre">==</span> <span class="pre">1</span></code>). ¿Cuántos fueron?</p></li>
+<li><p><strong>Filtro Compuesto con <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>:</strong> Filtra los datos para encontrar a todas las <strong>mujeres</strong> (<code class="docutils literal notranslate"><span class="pre">Sex</span> <span class="pre">==</span> <span class="pre">'female'</span></code>) de <strong>primera clase</strong> (<code class="docutils literal notranslate"><span class="pre">Pclass</span> <span class="pre">==</span> <span class="pre">1</span></code>). ¿Cuántas de ellas sobrevivieron? (Necesitarás un segundo paso para esto).</p></li>
+<li><p><strong>Filtro Compuesto con <code class="docutils literal notranslate"><span class="pre">|</span></code>:</strong> Crea un DataFrame que contenga a todos los pasajeros que eran <strong>menores de 18 años</strong> O <strong>mayores de 60 años</strong>.</p></li>
+<li><p><strong>Desafío con <code class="docutils literal notranslate"><span class="pre">.query()</span></code>:</strong> Repite el ejercicio 3 (mujeres de primera clase) pero esta vez usando el método <code class="docutils literal notranslate"><span class="pre">.query()</span></code>.</p></li>
+</ol>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./parte2_pandas"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="dataframes_pandas.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">📊 DataFrames y Exploración de Datos</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="agrupaciones_pandas.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">🧮 Agrupamientos y Agregaciones</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Wilmer Pineda
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

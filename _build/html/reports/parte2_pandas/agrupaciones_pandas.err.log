@@ -1,0 +1,176 @@
+Traceback (most recent call last):
+  File "C:\Users\legion\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\Users\legion\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\nbclient\client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\legion\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\asyncio\base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\legion\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\legion\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\legion\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Apply: Calculemos la media de todas las columnas numéricas para cada grupo
+media_por_especie = grupos_por_especie.mean()
+
+print("Media de las variables numéricas por especie:")
+display(media_por_especie)
+------------------
+
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mTypeError[0m                                 Traceback (most recent call last)
+File [1;32m~\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\groupby\groupby.py:1942[0m, in [0;36mGroupBy._agg_py_fallback[1;34m(self, how, values, ndim, alt)[0m
+[0;32m   1941[0m [38;5;28;01mtry[39;00m:
+[1;32m-> 1942[0m     res_values [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_grouper[49m[38;5;241;43m.[39;49m[43magg_series[49m[43m([49m[43mser[49m[43m,[49m[43m [49m[43malt[49m[43m,[49m[43m [49m[43mpreserve_dtype[49m[38;5;241;43m=[39;49m[38;5;28;43;01mTrue[39;49;00m[43m)[49m
+[0;32m   1943[0m [38;5;28;01mexcept[39;00m [38;5;167;01mException[39;00m [38;5;28;01mas[39;00m err:
+
+File [1;32m~\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\groupby\ops.py:864[0m, in [0;36mBaseGrouper.agg_series[1;34m(self, obj, func, preserve_dtype)[0m
+[0;32m    862[0m     preserve_dtype [38;5;241m=[39m [38;5;28;01mTrue[39;00m
+[1;32m--> 864[0m result [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_aggregate_series_pure_python[49m[43m([49m[43mobj[49m[43m,[49m[43m [49m[43mfunc[49m[43m)[49m
+[0;32m    866[0m npvalues [38;5;241m=[39m lib[38;5;241m.[39mmaybe_convert_objects(result, try_float[38;5;241m=[39m[38;5;28;01mFalse[39;00m)
+
+File [1;32m~\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\groupby\ops.py:885[0m, in [0;36mBaseGrouper._aggregate_series_pure_python[1;34m(self, obj, func)[0m
+[0;32m    884[0m [38;5;28;01mfor[39;00m i, group [38;5;129;01min[39;00m [38;5;28menumerate[39m(splitter):
+[1;32m--> 885[0m     res [38;5;241m=[39m [43mfunc[49m[43m([49m[43mgroup[49m[43m)[49m
+[0;32m    886[0m     res [38;5;241m=[39m extract_result(res)
+
+File [1;32m~\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\groupby\groupby.py:2454[0m, in [0;36mGroupBy.mean.<locals>.<lambda>[1;34m(x)[0m
+[0;32m   2451[0m [38;5;28;01melse[39;00m:
+[0;32m   2452[0m     result [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_cython_agg_general(
+[0;32m   2453[0m         [38;5;124m"[39m[38;5;124mmean[39m[38;5;124m"[39m,
+[1;32m-> 2454[0m         alt[38;5;241m=[39m[38;5;28;01mlambda[39;00m x: [43mSeries[49m[43m([49m[43mx[49m[43m,[49m[43m [49m[43mcopy[49m[38;5;241;43m=[39;49m[38;5;28;43;01mFalse[39;49;00m[43m)[49m[38;5;241;43m.[39;49m[43mmean[49m[43m([49m[43mnumeric_only[49m[38;5;241;43m=[39;49m[43mnumeric_only[49m[43m)[49m,
+[0;32m   2455[0m         numeric_only[38;5;241m=[39mnumeric_only,
+[0;32m   2456[0m     )
+[0;32m   2457[0m     [38;5;28;01mreturn[39;00m result[38;5;241m.[39m__finalize__([38;5;28mself[39m[38;5;241m.[39mobj, method[38;5;241m=[39m[38;5;124m"[39m[38;5;124mgroupby[39m[38;5;124m"[39m)
+
+File [1;32m~\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\series.py:6549[0m, in [0;36mSeries.mean[1;34m(self, axis, skipna, numeric_only, **kwargs)[0m
+[0;32m   6541[0m [38;5;129m@doc[39m(make_doc([38;5;124m"[39m[38;5;124mmean[39m[38;5;124m"[39m, ndim[38;5;241m=[39m[38;5;241m1[39m))
+[0;32m   6542[0m [38;5;28;01mdef[39;00m [38;5;21mmean[39m(
+[0;32m   6543[0m     [38;5;28mself[39m,
+[1;32m   (...)[0m
+[0;32m   6547[0m     [38;5;241m*[39m[38;5;241m*[39mkwargs,
+[0;32m   6548[0m ):
+[1;32m-> 6549[0m     [38;5;28;01mreturn[39;00m [43mNDFrame[49m[38;5;241;43m.[39;49m[43mmean[49m[43m([49m[38;5;28;43mself[39;49m[43m,[49m[43m [49m[43maxis[49m[43m,[49m[43m [49m[43mskipna[49m[43m,[49m[43m [49m[43mnumeric_only[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+
+File [1;32m~\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\generic.py:12420[0m, in [0;36mNDFrame.mean[1;34m(self, axis, skipna, numeric_only, **kwargs)[0m
+[0;32m  12413[0m [38;5;28;01mdef[39;00m [38;5;21mmean[39m(
+[0;32m  12414[0m     [38;5;28mself[39m,
+[0;32m  12415[0m     axis: Axis [38;5;241m|[39m [38;5;28;01mNone[39;00m [38;5;241m=[39m [38;5;241m0[39m,
+[1;32m   (...)[0m
+[0;32m  12418[0m     [38;5;241m*[39m[38;5;241m*[39mkwargs,
+[0;32m  12419[0m ) [38;5;241m-[39m[38;5;241m>[39m Series [38;5;241m|[39m [38;5;28mfloat[39m:
+[1;32m> 12420[0m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_stat_function[49m[43m([49m
+[0;32m  12421[0m [43m        [49m[38;5;124;43m"[39;49m[38;5;124;43mmean[39;49m[38;5;124;43m"[39;49m[43m,[49m[43m [49m[43mnanops[49m[38;5;241;43m.[39;49m[43mnanmean[49m[43m,[49m[43m [49m[43maxis[49m[43m,[49m[43m [49m[43mskipna[49m[43m,[49m[43m [49m[43mnumeric_only[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m
+[0;32m  12422[0m [43m    [49m[43m)[49m
+
+File [1;32m~\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\generic.py:12377[0m, in [0;36mNDFrame._stat_function[1;34m(self, name, func, axis, skipna, numeric_only, **kwargs)[0m
+[0;32m  12375[0m validate_bool_kwarg(skipna, [38;5;124m"[39m[38;5;124mskipna[39m[38;5;124m"[39m, none_allowed[38;5;241m=[39m[38;5;28;01mFalse[39;00m)
+[1;32m> 12377[0m [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_reduce[49m[43m([49m
+[0;32m  12378[0m [43m    [49m[43mfunc[49m[43m,[49m[43m [49m[43mname[49m[38;5;241;43m=[39;49m[43mname[49m[43m,[49m[43m [49m[43maxis[49m[38;5;241;43m=[39;49m[43maxis[49m[43m,[49m[43m [49m[43mskipna[49m[38;5;241;43m=[39;49m[43mskipna[49m[43m,[49m[43m [49m[43mnumeric_only[49m[38;5;241;43m=[39;49m[43mnumeric_only[49m
+[0;32m  12379[0m [43m[49m[43m)[49m
+
+File [1;32m~\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\series.py:6457[0m, in [0;36mSeries._reduce[1;34m(self, op, name, axis, skipna, numeric_only, filter_type, **kwds)[0m
+[0;32m   6453[0m     [38;5;28;01mraise[39;00m [38;5;167;01mTypeError[39;00m(
+[0;32m   6454[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;124mSeries.[39m[38;5;132;01m{[39;00mname[38;5;132;01m}[39;00m[38;5;124m does not allow [39m[38;5;132;01m{[39;00mkwd_name[38;5;132;01m}[39;00m[38;5;124m=[39m[38;5;132;01m{[39;00mnumeric_only[38;5;132;01m}[39;00m[38;5;124m [39m[38;5;124m"[39m
+[0;32m   6455[0m         [38;5;124m"[39m[38;5;124mwith non-numeric dtypes.[39m[38;5;124m"[39m
+[0;32m   6456[0m     )
+[1;32m-> 6457[0m [38;5;28;01mreturn[39;00m [43mop[49m[43m([49m[43mdelegate[49m[43m,[49m[43m [49m[43mskipna[49m[38;5;241;43m=[39;49m[43mskipna[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwds[49m[43m)[49m
+
+File [1;32m~\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\nanops.py:147[0m, in [0;36mbottleneck_switch.__call__.<locals>.f[1;34m(values, axis, skipna, **kwds)[0m
+[0;32m    146[0m [38;5;28;01melse[39;00m:
+[1;32m--> 147[0m     result [38;5;241m=[39m [43malt[49m[43m([49m[43mvalues[49m[43m,[49m[43m [49m[43maxis[49m[38;5;241;43m=[39;49m[43maxis[49m[43m,[49m[43m [49m[43mskipna[49m[38;5;241;43m=[39;49m[43mskipna[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwds[49m[43m)[49m
+[0;32m    149[0m [38;5;28;01mreturn[39;00m result
+
+File [1;32m~\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\nanops.py:404[0m, in [0;36m_datetimelike_compat.<locals>.new_func[1;34m(values, axis, skipna, mask, **kwargs)[0m
+[0;32m    402[0m     mask [38;5;241m=[39m isna(values)
+[1;32m--> 404[0m result [38;5;241m=[39m [43mfunc[49m[43m([49m[43mvalues[49m[43m,[49m[43m [49m[43maxis[49m[38;5;241;43m=[39;49m[43maxis[49m[43m,[49m[43m [49m[43mskipna[49m[38;5;241;43m=[39;49m[43mskipna[49m[43m,[49m[43m [49m[43mmask[49m[38;5;241;43m=[39;49m[43mmask[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+[0;32m    406[0m [38;5;28;01mif[39;00m datetimelike:
+
+File [1;32m~\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\nanops.py:720[0m, in [0;36mnanmean[1;34m(values, axis, skipna, mask)[0m
+[0;32m    719[0m the_sum [38;5;241m=[39m values[38;5;241m.[39msum(axis, dtype[38;5;241m=[39mdtype_sum)
+[1;32m--> 720[0m the_sum [38;5;241m=[39m [43m_ensure_numeric[49m[43m([49m[43mthe_sum[49m[43m)[49m
+[0;32m    722[0m [38;5;28;01mif[39;00m axis [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m [38;5;129;01mand[39;00m [38;5;28mgetattr[39m(the_sum, [38;5;124m"[39m[38;5;124mndim[39m[38;5;124m"[39m, [38;5;28;01mFalse[39;00m):
+
+File [1;32m~\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\nanops.py:1701[0m, in [0;36m_ensure_numeric[1;34m(x)[0m
+[0;32m   1699[0m [38;5;28;01mif[39;00m [38;5;28misinstance[39m(x, [38;5;28mstr[39m):
+[0;32m   1700[0m     [38;5;66;03m# GH#44008, GH#36703 avoid casting e.g. strings to numeric[39;00m
+[1;32m-> 1701[0m     [38;5;28;01mraise[39;00m [38;5;167;01mTypeError[39;00m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mCould not convert string [39m[38;5;124m'[39m[38;5;132;01m{[39;00mx[38;5;132;01m}[39;00m[38;5;124m'[39m[38;5;124m to numeric[39m[38;5;124m"[39m)
+[0;32m   1702[0m [38;5;28;01mtry[39;00m:
+
+[1;31mTypeError[0m: Could not convert string 'TorgersenTorgersenTorgersenTorgersenTorgersenTorgersenTorgersenTorgersenTorgersenTorgersenTorgersenTorgersenTorgersenTorgersenTorgersenTorgersenTorgersenTorgersenTorgersenTorgersenBiscoeBiscoeBiscoeBiscoeBiscoeBiscoeBiscoeBiscoeBiscoeBiscoeDreamDreamDreamDreamDreamDreamDreamDreamDreamDreamDreamDreamDreamDreamDreamDreamDreamDreamDreamDreamBiscoeBiscoeBiscoeBiscoeBiscoeBiscoeBiscoeBiscoeBiscoeBiscoeBiscoeBiscoeBiscoeBiscoeBiscoeBiscoeBiscoeBiscoeTorgersenTorgersenTorgersenTorgersenTorgersenTorgersenTorgersenTorgersenTorgersenTorgersenTorgersenTorgersenTorgersenTorgersenTorgersenTorgersenDreamDreamDreamDreamDreamDreamDreamDreamDreamDreamDreamDreamDreamDreamDreamDreamBiscoeBiscoeBiscoeBiscoeBiscoeBiscoeBiscoeBiscoeBiscoeBiscoeBiscoeBiscoeBiscoeBiscoeBiscoeBiscoeTorgersenTorgersenTorgersenTorgersenTorgersenTorgersenTorgersenTorgersenTorgersenTorgersenTorgersenTorgersenTorgersenTorgersenTorgersenTorgersenDreamDreamDreamDreamDreamDreamDreamDreamDreamDreamDreamDreamDreamDreamDreamDreamDreamDreamDreamDream' to numeric
+
+The above exception was the direct cause of the following exception:
+
+[1;31mTypeError[0m                                 Traceback (most recent call last)
+Cell [1;32mIn[2], line 2[0m
+[0;32m      1[0m [38;5;66;03m# Apply: Calculemos la media de todas las columnas numéricas para cada grupo[39;00m
+[1;32m----> 2[0m media_por_especie [38;5;241m=[39m [43mgrupos_por_especie[49m[38;5;241;43m.[39;49m[43mmean[49m[43m([49m[43m)[49m
+[0;32m      4[0m [38;5;28mprint[39m([38;5;124m"[39m[38;5;124mMedia de las variables numéricas por especie:[39m[38;5;124m"[39m)
+[0;32m      5[0m display(media_por_especie)
+
+File [1;32m~\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\groupby\groupby.py:2452[0m, in [0;36mGroupBy.mean[1;34m(self, numeric_only, engine, engine_kwargs)[0m
+[0;32m   2445[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_numba_agg_general(
+[0;32m   2446[0m         grouped_mean,
+[0;32m   2447[0m         executor[38;5;241m.[39mfloat_dtype_mapping,
+[0;32m   2448[0m         engine_kwargs,
+[0;32m   2449[0m         min_periods[38;5;241m=[39m[38;5;241m0[39m,
+[0;32m   2450[0m     )
+[0;32m   2451[0m [38;5;28;01melse[39;00m:
+[1;32m-> 2452[0m     result [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_cython_agg_general[49m[43m([49m
+[0;32m   2453[0m [43m        [49m[38;5;124;43m"[39;49m[38;5;124;43mmean[39;49m[38;5;124;43m"[39;49m[43m,[49m
+[0;32m   2454[0m [43m        [49m[43malt[49m[38;5;241;43m=[39;49m[38;5;28;43;01mlambda[39;49;00m[43m [49m[43mx[49m[43m:[49m[43m [49m[43mSeries[49m[43m([49m[43mx[49m[43m,[49m[43m [49m[43mcopy[49m[38;5;241;43m=[39;49m[38;5;28;43;01mFalse[39;49;00m[43m)[49m[38;5;241;43m.[39;49m[43mmean[49m[43m([49m[43mnumeric_only[49m[38;5;241;43m=[39;49m[43mnumeric_only[49m[43m)[49m[43m,[49m
+[0;32m   2455[0m [43m        [49m[43mnumeric_only[49m[38;5;241;43m=[39;49m[43mnumeric_only[49m[43m,[49m
+[0;32m   2456[0m [43m    [49m[43m)[49m
+[0;32m   2457[0m     [38;5;28;01mreturn[39;00m result[38;5;241m.[39m__finalize__([38;5;28mself[39m[38;5;241m.[39mobj, method[38;5;241m=[39m[38;5;124m"[39m[38;5;124mgroupby[39m[38;5;124m"[39m)
+
+File [1;32m~\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\groupby\groupby.py:1998[0m, in [0;36mGroupBy._cython_agg_general[1;34m(self, how, alt, numeric_only, min_count, **kwargs)[0m
+[0;32m   1995[0m     result [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_agg_py_fallback(how, values, ndim[38;5;241m=[39mdata[38;5;241m.[39mndim, alt[38;5;241m=[39malt)
+[0;32m   1996[0m     [38;5;28;01mreturn[39;00m result
+[1;32m-> 1998[0m new_mgr [38;5;241m=[39m [43mdata[49m[38;5;241;43m.[39;49m[43mgrouped_reduce[49m[43m([49m[43marray_func[49m[43m)[49m
+[0;32m   1999[0m res [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_wrap_agged_manager(new_mgr)
+[0;32m   2000[0m [38;5;28;01mif[39;00m how [38;5;129;01min[39;00m [[38;5;124m"[39m[38;5;124midxmin[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124midxmax[39m[38;5;124m"[39m]:
+
+File [1;32m~\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\internals\managers.py:1469[0m, in [0;36mBlockManager.grouped_reduce[1;34m(self, func)[0m
+[0;32m   1465[0m [38;5;28;01mif[39;00m blk[38;5;241m.[39mis_object:
+[0;32m   1466[0m     [38;5;66;03m# split on object-dtype blocks bc some columns may raise[39;00m
+[0;32m   1467[0m     [38;5;66;03m#  while others do not.[39;00m
+[0;32m   1468[0m     [38;5;28;01mfor[39;00m sb [38;5;129;01min[39;00m blk[38;5;241m.[39m_split():
+[1;32m-> 1469[0m         applied [38;5;241m=[39m [43msb[49m[38;5;241;43m.[39;49m[43mapply[49m[43m([49m[43mfunc[49m[43m)[49m
+[0;32m   1470[0m         result_blocks [38;5;241m=[39m extend_blocks(applied, result_blocks)
+[0;32m   1471[0m [38;5;28;01melse[39;00m:
+
+File [1;32m~\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\internals\blocks.py:393[0m, in [0;36mBlock.apply[1;34m(self, func, **kwargs)[0m
+[0;32m    387[0m [38;5;129m@final[39m
+[0;32m    388[0m [38;5;28;01mdef[39;00m [38;5;21mapply[39m([38;5;28mself[39m, func, [38;5;241m*[39m[38;5;241m*[39mkwargs) [38;5;241m-[39m[38;5;241m>[39m [38;5;28mlist[39m[Block]:
+[0;32m    389[0m [38;5;250m    [39m[38;5;124;03m"""[39;00m
+[0;32m    390[0m [38;5;124;03m    apply the function to my values; return a block if we are not[39;00m
+[0;32m    391[0m [38;5;124;03m    one[39;00m
+[0;32m    392[0m [38;5;124;03m    """[39;00m
+[1;32m--> 393[0m     result [38;5;241m=[39m [43mfunc[49m[43m([49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mvalues[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+[0;32m    395[0m     result [38;5;241m=[39m maybe_coerce_values(result)
+[0;32m    396[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_split_op_result(result)
+
+File [1;32m~\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\groupby\groupby.py:1995[0m, in [0;36mGroupBy._cython_agg_general.<locals>.array_func[1;34m(values)[0m
+[0;32m   1992[0m     [38;5;28;01mreturn[39;00m result
+[0;32m   1994[0m [38;5;28;01massert[39;00m alt [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m
+[1;32m-> 1995[0m result [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_agg_py_fallback[49m[43m([49m[43mhow[49m[43m,[49m[43m [49m[43mvalues[49m[43m,[49m[43m [49m[43mndim[49m[38;5;241;43m=[39;49m[43mdata[49m[38;5;241;43m.[39;49m[43mndim[49m[43m,[49m[43m [49m[43malt[49m[38;5;241;43m=[39;49m[43malt[49m[43m)[49m
+[0;32m   1996[0m [38;5;28;01mreturn[39;00m result
+
+File [1;32m~\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandas\core\groupby\groupby.py:1946[0m, in [0;36mGroupBy._agg_py_fallback[1;34m(self, how, values, ndim, alt)[0m
+[0;32m   1944[0m     msg [38;5;241m=[39m [38;5;124mf[39m[38;5;124m"[39m[38;5;124magg function failed [how->[39m[38;5;132;01m{[39;00mhow[38;5;132;01m}[39;00m[38;5;124m,dtype->[39m[38;5;132;01m{[39;00mser[38;5;241m.[39mdtype[38;5;132;01m}[39;00m[38;5;124m][39m[38;5;124m"[39m
+[0;32m   1945[0m     [38;5;66;03m# preserve the kind of exception that raised[39;00m
+[1;32m-> 1946[0m     [38;5;28;01mraise[39;00m [38;5;28mtype[39m(err)(msg) [38;5;28;01mfrom[39;00m [38;5;21;01merr[39;00m
+[0;32m   1948[0m [38;5;28;01mif[39;00m ser[38;5;241m.[39mdtype [38;5;241m==[39m [38;5;28mobject[39m:
+[0;32m   1949[0m     res_values [38;5;241m=[39m res_values[38;5;241m.[39mastype([38;5;28mobject[39m, copy[38;5;241m=[39m[38;5;28;01mFalse[39;00m)
+
+[1;31mTypeError[0m: agg function failed [how->mean,dtype->object]
+
