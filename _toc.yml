@@ -18,7 +18,9 @@ parts:
           - file: quiz_conocimientos_1
           - file: quiz_conocimientos_2
 
-  - caption: Herramientas Básicas de Python para Ciencia de Datos
+  - caption: Herramientas Básicas de Python para Ciencia de Datos (Pandas)
     chapters:
       - file: parte2_pandas/intro_pandas
       - file: parte2_pandas/dataframes_pandas
+      - file: parte2_pandas/filtros_consultas_pandas
+      - file: parte2_pandas/agrupaciones_pandas
