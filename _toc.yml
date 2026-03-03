@@ -24,3 +24,7 @@ parts:
       - file: parte2_pandas/dataframes_pandas
       - file: parte2_pandas/filtros_consultas_pandas
       - file: parte2_pandas/agrupaciones_pandas
+      - file: intro_quices_2
+        sections:
+          - file: quiz_conocimientos_3
+          - file: quiz_conocimientos_4
